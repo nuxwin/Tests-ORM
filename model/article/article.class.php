@@ -18,40 +18,39 @@ use core\model\orm\wOrm;
  */
 class Article extends wOrm
 {
-    /* Definition */
-    protected $id;
-    protected $title;
-    protected $hook;
-    protected $text;
-    protected $is_published;
-    protected $create_date;
-    protected $update_date;
-    
-    public function __construct()
-    {
-        parent::__construct();
+  /* Definition */
+  protected $id;
+  protected $title;
+  protected $hook;
+  protected $text;
+  protected $is_published;
+  protected $create_date;
+  protected $update_date;
 
-        $this->addRelation(wOrm::ONE_TO_MANY   , array('column' => 'id', 'foreignClass' => 'Commentaire', 'foreignColumn' => 'article_id'));
-        $this->addRelation(wOrm::MANY_TO_MANY  , array('column' => 'id', 'foreignClass' => 'Tag', 'foreignColumn' => 'id', 'relationClass' => 'ArticleTag'));
-    }
+  public function __construct()
+  {
+    parent::__construct();
 
-    /* Custom methods should come here */
+    $this->addRelation(wOrm::ONE_TO_MANY   , array('column' => 'id', 'foreignClass' => 'Commentaire', 'foreignColumn' => 'article_id'));
+    $this->addRelation(wOrm::MANY_TO_MANY  , array('column' => 'id', 'foreignClass' => 'Tag', 'foreignColumn' => 'id', 'relationClass' => 'ArticleTag'));
+  }
 
-    /**
-     * @return boolean
-     */
-    public function isPublished()
-    {
-        return $this->getIs_published();
-    }
+  /* Custom methods should come here */
 
-    /**
-     * @return int
-     */
-    public function getNbCommentaires()
-    {
-        return count($this->getCommentaires());
-    }
+  /**
+   * @return boolean
+   */
+  public function isPublished()
+  {
+    return $this->getIs_published();
+  }
+
+  /**
+   * @return int
+   */
+  public function getNbCommentaires()
+  {
+    return count($this->getCommentaires());
+  }
 }
 
-?>

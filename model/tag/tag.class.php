@@ -11,17 +11,16 @@ use core\model\orm\wOrm;
  */
 class Tag extends wOrm
 {
-    /* Definition */
-    protected $id;
-    protected $name;
+  /* Definition */
+  protected $id;
+  protected $name;
 
-    public function __construct()
-    {
-        parent::__construct();
-    }
+  public function __construct()
+  {
+    parent::__construct();
+  }
 
-    /* Custom methods should come here */
+  /* Custom methods should come here */
 
 }
 
-?>

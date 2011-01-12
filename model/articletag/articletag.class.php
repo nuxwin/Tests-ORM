@@ -11,18 +11,17 @@ use core\model\orm\wOrm;
  */
 class ArticleTag extends wOrm
 {
-    protected static $_tableName = 'article_tag';
+  protected static $_tableName = 'article_tag';
 
-    protected $tag_id;
-    protected $article_id;
-    
-    public function __construct()
-    {
-        parent::__construct();
-    }
+  protected $tag_id;
+  protected $article_id;
 
-    /* Custom methods should come here */
-    
+  public function __construct()
+  {
+    parent::__construct();
+  }
+
+  /* Custom methods should come here */
+
 }
 
-?>
