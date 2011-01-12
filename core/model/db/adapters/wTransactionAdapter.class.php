@@ -10,18 +10,17 @@ namespace core\model\db\adapters;
  */
 interface wTransactionAdapter
 {
-    /**
-     * Commencer une transaction.
-     */
-    public function beginTransaction();
-    /**
-     * Enregistrer les modifications.
-     */
-    public function commit();
-    /**
-     * Annuler les modifications.
-     */
-    public function rollBack();
+  /**
+   * Commencer une transaction.
+   */
+  public function beginTransaction();
+  /**
+   * Enregistrer les modifications.
+   */
+  public function commit();
+  /**
+   * Annuler les modifications.
+   */
+  public function rollBack();
 }
 
-?>

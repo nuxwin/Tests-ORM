@@ -17,59 +17,58 @@ use core\model\db\adapters\wDbAdapter;
  */
 class wPdo extends \PDO implements wDbAdapter
 {
-    /**
-     * Constructor.
-     * Enables PDOExceptions
-     * Initiates wStatement
-     *
-     * @param string $dsn
-     * @param string $username
-     * @param string $password
-     * @param array $driver_options
-     */
-    final public function __construct($dsn, $username = '', $password = '', $driver_options = array())
-    {
-        parent::__construct($dsn, $username, $password, $driver_options);        
-        $this->setAttribute(self::ATTR_ERRMODE, self::ERRMODE_EXCEPTION);
-        $this->setAttribute(self::ATTR_STATEMENT_CLASS, array('core\model\pdo\wStatement'));
-        wStatement::setPDOInstance($this);
-    }
+  /**
+   * Constructor.
+   * Enables PDOExceptions
+   * Initiates wStatement
+   *
+   * @param string $dsn
+   * @param string $username
+   * @param string $password
+   * @param array $driver_options
+   */
+  final public function __construct($dsn, $username = '', $password = '', $driver_options = array())
+  {
+    parent::__construct($dsn, $username, $password, $driver_options);        
+    $this->setAttribute(self::ATTR_ERRMODE, self::ERRMODE_EXCEPTION);
+    $this->setAttribute(self::ATTR_STATEMENT_CLASS, array('core\model\pdo\wStatement'));
+    wStatement::setPDOInstance($this);
+  }
 
-    /**
-     * Exécute une requête.
-     * @param string $query
-     */
-    public function exec($query)
-    {
-//        echo '<br />'.$query;
+  /**
+   * Exécute une requête.
+   * @param string $query
+   */
+  public function exec($query)
+  {
+    //        echo '<br />'.$query;
 
-        return parent::exec($query);
-    }
+    return parent::exec($query);
+  }
 
-    /**
-     * Interroge la base de données.
-     */
-    public function query($query)
-    {
-//        echo '<br />'.$query;
+  /**
+   * Interroge la base de données.
+   */
+  public function query($query)
+  {
+    //        echo '<br />'.$query;
 
-        return parent::query($query);
-    }
+    return parent::query($query);
+  }
 
-    /**
-     * Retourne une description de la table de base de données spécifiée.
-     * @param string $table_name
-     * @return array
-     */
-    public function describeTable($table_name)
-    {
-        $sql        = sprintf('DESCRIBE %s', $table_name);
-        $statment   = $this->prepare($sql);
+  /**
+   * Retourne une description de la table de base de données spécifiée.
+   * @param string $table_name
+   * @return array
+   */
+  public function describeTable($table_name)
+  {
+    $sql        = sprintf('DESCRIBE %s', $table_name);
+    $statment   = $this->prepare($sql);
 
-        $statment->execute();
+    $statment->execute();
 
-        return $statment->fetchAll(\PDO::FETCH_ASSOC);
-    }
+    return $statment->fetchAll(\PDO::FETCH_ASSOC);
+  }
 }
 
-?>

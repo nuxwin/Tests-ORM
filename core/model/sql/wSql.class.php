@@ -10,37 +10,36 @@ namespace core\model\sql;
  */
 abstract class wSql
 {
-    /**
-     * @return wSqlSelect
-     */
-    public function sqlSelect()
-    {
-        return new wSqlSelect();
-    }
+  /**
+   * @return wSqlSelect
+   */
+  public function sqlSelect()
+  {
+    return new wSqlSelect();
+  }
 
-    /**
-     * @return wSqlUpdate
-     */
-    public function sqlUpdate()
-    {
-        return new wSqlUpdate();
-    }
+  /**
+   * @return wSqlUpdate
+   */
+  public function sqlUpdate()
+  {
+    return new wSqlUpdate();
+  }
 
-    /**
-     * @return wSqlDelete
-     */
-    public function sqlDelete()
-    {
-        return new wSqlDelete();
-    }
+  /**
+   * @return wSqlDelete
+   */
+  public function sqlDelete()
+  {
+    return new wSqlDelete();
+  }
 
-    /**
-     * @return wSqlInsert
-     */
-    public function sqlInsert()
-    {
-        return new wSqlInsert();
-    }
+  /**
+   * @return wSqlInsert
+   */
+  public function sqlInsert()
+  {
+    return new wSqlInsert();
+  }
 }
 
-?>

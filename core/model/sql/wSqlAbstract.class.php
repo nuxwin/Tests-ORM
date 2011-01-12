@@ -9,40 +9,39 @@ namespace core\model\sql;
  */
 abstract class wSqlAbstract
 {
-    /**
-     * @var string
-     */
-    protected $request = null;
-    /**
-     * @var array
-     */
-    protected $parameters = array();
+  /**
+   * @var string
+   */
+  protected $request = null;
+  /**
+   * @var array
+   */
+  protected $parameters = array();
 
-    /**
-     * @return string
-     */
-    public function getRequest()
-    {
-        $this->_build();
+  /**
+   * @return string
+   */
+  public function getRequest()
+  {
+    $this->_build();
 
-        return $this->request;
-    }
+    return $this->request;
+  }
 
-    /**
-     * @return array
-     */
-    public function getParameters()
-    {
-        $this->_build();
+  /**
+   * @return array
+   */
+  public function getParameters()
+  {
+    $this->_build();
 
-        return $this->parameters;
-    }
+    return $this->parameters;
+  }
 
-    /**
-     * Termine la construction de la requête et la retourne.
-     * @return string
-     */
-    protected abstract function _build();
+  /**
+   * Termine la construction de la requête et la retourne.
+   * @return string
+   */
+  protected abstract function _build();
 }
 
-?>
