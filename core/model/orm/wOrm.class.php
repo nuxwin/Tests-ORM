@@ -332,7 +332,7 @@ abstract class wOrm
   {
     $name = $params['foreignClass'];
 
-    $params['type'] = self::ONE_TO_MANY;
+    $params['type'] = self::ONE_TO_ONE;
 
     static::$_relations[$name] = $params;
   }
@@ -344,7 +344,7 @@ abstract class wOrm
   {
     $name = $params['foreignClass'] . 's';
 
-    $params['type'] = self::ONE_TO_ONE;
+    $params['type'] = self::ONE_TO_MANY;
 
     static::$_relations[$name] = $params;
   }
